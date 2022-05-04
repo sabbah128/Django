@@ -23,16 +23,15 @@
       type="text/css"
       href="{% static 'blog/main.css' %}"
     />
-    <title>My Finance Blog</title>
+    <title>My Finance Blog</title>    
   </head>
 
   <body class="bg-light">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-          <a class="navbar-brand mb-0 h1" href="{% url 'blog_list' %}"
-            >My Financial Blog</a
-          >
+          <a class="navbar-brand mb-0 h1" href="{% url 'blog_list' %}">My Financial Blog</a>
+          <a href="{% url 'register' %}">register</a>
         </div>
       </nav>
     </header>
