@@ -147,3 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # for install package django_crispy_forms
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# for redirect to first page (blog_list)
+LOGIN_REDIRECT_URL = "blog_list"
