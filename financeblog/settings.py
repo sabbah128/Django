@@ -149,4 +149,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # for redirect to first page (blog_list)
-LOGIN_REDIRECT_URL = "blog_list"
+LOGIN_REDIRECT_URL = 'blog_list'
+
+# login_required needs to know where to redirect unauthenticated users
+LOGIN_URL = 'login'
