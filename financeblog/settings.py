@@ -153,3 +153,11 @@ LOGIN_REDIRECT_URL = 'blog_list'
 
 # login_required needs to know where to redirect unauthenticated users
 LOGIN_URL = 'login'
+
+# for send email p185
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER='sabbah128@gmail.com'
+EMAIL_HOST_PASSWORD='gxralapfopsvegsp'

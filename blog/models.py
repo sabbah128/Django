@@ -3,6 +3,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.core.validators import MinLengthValidator
+from django.urls import reverse
 
 
 content_validator = MinLengthValidator(limit_value=100, message="Content should be atleast 100 characters long!")
@@ -18,3 +19,6 @@ class Blog(models.Model):
     
     def get_absolute_url(self):
         return reverse("blog_detail", kwargs={'pk': self.pk})
+    
+    def get_absolute_url(self):
+        return reverse("blogs_detail", kwargs={'pk': self.pk})
