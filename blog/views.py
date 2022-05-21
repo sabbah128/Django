@@ -3,6 +3,7 @@ from blog.models import Blog
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 
 def list_blogs(request):
@@ -29,3 +30,19 @@ class BlogCreateView(LoginRequiredMixin, SuccessMessageMixin, generic.CreateView
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+class BlogUpdateView(LoginRequiredMixin, UserPassesTestMixin,SuccessMessageMixin, generic.UpdateView):
+    model = Blog
+    fields = ['title', 'content']
+    success_message = "Blog Updated Successfully!"
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+    def test_func(self):
+        blog = self.get_object()
+        if self.request.user == blog.author:
+            return True
+        else:
+            return False
